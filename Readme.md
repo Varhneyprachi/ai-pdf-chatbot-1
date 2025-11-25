@@ -1,68 +1,57 @@
 📄 PDF Question–Answering App (RAG + Ollama + Streamlit)
-A simple, fast and fully local PDF Question-Answering Application built using:
 
+This project is a simple and powerful PDF Question-Answering System.
+It allows users to upload any PDF file and ask questions based on its content.
+Built using LangChain, Ollama, ChromaDB, and Streamlit.
 
-LangChain
+🚀 Live Demo
 
-
-Ollama (local LLM + embeddings)
-
-
-Chroma vector store
-
-
-Streamlit UI
-
-
-Users can upload a PDF, the app extracts text, chunks it, embeds using Ollama, stores it in Chroma, and answers questions using a local LLM.
-
-🚀 Live Demo (Render Deployment)
-👉 Open the deployed app:
+👉 Deployed App:
 https://ai-pdf-chatbot-hzb9.onrender.com/
 
 ✨ Features
 
+📄 Upload any PDF file
 
-📄 Upload any PDF
+🔍 Extract and chunk text automatically
 
+🧠 Embedding using local Ollama models
 
-🔍 Extracts and splits text into intelligent chunks
+📚 Vector search using ChromaDB
 
+🤖 Answer generation using local LLMs (Ollama)
 
-🧠 Embeds using local Ollama embedding model
+⚡ Works offline once models are downloaded
 
+🎨 Clean and simple Streamlit UI
 
-📚 Stores chunks in Chroma vector DB
+🛠 Tech Stack
+Component	Technology Used
+Language Model	Ollama (llama3, etc.)
+Embeddings	Ollama Embeddings
+Vector Store	ChromaDB
+Framework	LangChain
+UI Framework	Streamlit
+Language	Python
+📥 Installation & Setup (Local)
+1️⃣ Clone the Repository
+git clone https://github.com/your-username/ai-pdf-chatbot-1.git
+cd ai-pdf-chatbot-1
 
-
-🤖 Uses local LLM (Ollama) to generate answers
-
-
-⚡ Fully offline if Ollama models are downloaded
-
-
-🛠 Simple Streamlit UI
-
-
-
-🧰 Tech Stack
-ComponentTechnologyLLMOllama (llama3, llama2, mistral, qwen, etc.)EmbeddingsOllama embeddingsVector DatabaseChromaFrameworkLangChainUIStreamlitLanguagePython
-
-📦 Installation (Local Setup)
-1️⃣ Clone the repository
-git clone https://github.com/your-username/pdf-qa-rag-system.git
-cd pdf-qa-rag-system
-
-2️⃣ Create virtual environment
+2️⃣ Create a Virtual Environment
 python -m venv venv
 
+
 Activate:
+
 Windows
+
 venv\Scripts\activate
 
+3️⃣ Install Dependencies
 
-3️⃣ Install dependencies
-(Add your simple requirements without version numbers)
+(Using simple, conflict-free installs)
+
 pip install streamlit
 pip install pypdf
 pip install langchain
@@ -70,64 +59,64 @@ pip install langchain-community
 pip install langchain-chroma
 pip install langchain-ollama
 
+4️⃣ Install Ollama & Pull Models
 
-4️⃣ Install Ollama and pull models
-Download Ollama:
+Download Ollama from:
 https://ollama.com/download
+
 Pull required models:
+
 ollama pull nomic-embed-text
 ollama pull llama3.1
 
-(You may replace them with any other local models.)
 
-5️⃣ Run the application
+(You can use any other local models you prefer.)
+
+5️⃣ Run the Application
 streamlit run app.py
 
-Then open the Streamlit link shown in terminal (usually http://localhost:8501).
 
-🖥 How It Works
+The app will start at:
 
+http://localhost:8501
 
-Upload a PDF.
+🧠 How It Works
 
+User uploads a PDF.
 
-App extracts text using PyPDFLoader.
+Text is extracted using PyPDFLoader.
 
+The text is chunked using RecursiveCharacterTextSplitter.
 
-Text is split into overlapping chunks.
+Chunks are embedded using Ollama embedding models.
 
+Embeddings are stored in ChromaDB.
 
-Each chunk is embedded using an Ollama embedding model.
+When the user asks a question:
 
+Relevant chunks are retrieved via vector search
 
-Chroma stores those embeddings.
-
-
-User enters a query.
-
-
-Semantically similar chunks are retrieved.
-
-
-LLM (Ollama) generates the answer from the context.
-
-
+The local LLM generates an answer based on retrieved context
 
 📁 Project Structure
 .
 ├── app.py
 ├── README.md
-├── venv/
-└── (optional) data/
+├── requirements.txt (optional)
+└── venv/ (not included in Git)
 
+🌐 Deployment
 
-🌐 Deployment (Render)
-This project is deployed on Render using Streamlit.
-Live Demo →
+This project is deployed on Render (free tier).
+
+Live URL:
 👉 https://ai-pdf-chatbot-hzb9.onrender.com/
 
 🤝 Contributing
-Pull requests and improvements are welcome!
+
+Pull requests, improvements, and suggestions are welcome!
 
 📜 License
-This project is open-source. Use it, modify it, learn from it.
+
+This project is open-source.
+Feel free to use, modify, or enhance it.
