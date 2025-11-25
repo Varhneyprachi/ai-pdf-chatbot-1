@@ -45,3 +45,15 @@ https://ai-pdf-chatbot-hzb9.onrender.com/
 ```bash
 git clone https://github.com/your-username/ai-pdf-chatbot-1.git
 cd ai-pdf-chatbot-1
+
+### **4️⃣ Install Ollama & Pull Models**
+
+Download Ollama:  
+https://ollama.com/download
+
+Then pull the required models:
+
+```bash
+ollama pull nomic-embed-text
+ollama pull llama3.1
+
